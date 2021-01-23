@@ -19,7 +19,7 @@ public class RunClient {
 
       switch (command.toLowerCase()) {
         case "help":
-          System.out.println("Available commands are: nodes, list, get, exit");
+          System.out.println("Available commands are: nodes, list, get, send, exit");
           break;
         case "nodes":
           Integer[] nodes = client.nodes();

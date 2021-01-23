@@ -48,6 +48,7 @@ public class NodeImplementation implements NodeServer {
         client.createFile(f.getName(), data, len);
         len = fin.read(data);
       }
+      fin.close();
     } catch (Exception e) {
       e.printStackTrace();
       return false;
@@ -78,7 +79,7 @@ public class NodeImplementation implements NodeServer {
     File[] files = f.listFiles();
     for (File file : files) {
       if(!file.isDirectory()) {
-        this.files.add(file.getPath().replace(baseDirectory+"/", ""));
+        this.files.add(file.getPath().replace(baseDirectory+"/", "").replace(baseDirectory+"\\", ""));
       } else {
         indexFiles(file.getPath());
       }

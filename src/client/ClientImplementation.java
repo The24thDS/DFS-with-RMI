@@ -86,6 +86,7 @@ public class ClientImplementation implements Client {
         node.createFile(f.getName(), data, len);
         len = fin.read(data);
       }
+      fin.close();
     } catch (Exception e) {
       e.printStackTrace();
       return false;
